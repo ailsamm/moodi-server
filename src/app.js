@@ -4,8 +4,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
 const logger = require('./logger');
-const usersService = require('./users/users-service');
-const moodLogsService = require('./mood-logs/mood-logs-service');
+const usersRouter = require('./users/users-router');
+//const moodLogsRouter = require('./mood-logs/mood-logs-router');
 const { NODE_ENV } = require('./config');
 
 const app = express();
@@ -29,8 +29,8 @@ app.use(function errorHandler(error, req, res, next) {
   res.status(500).json(response);
 })
 
-app.use('/api/users', usersService);
-app.use('/api/mood-logs', moodLogsService);
+app.use('/api/users', usersRouter);
+//app.use('/api/mood-logs', moodLogsRouter);
 
 app.get('/', (req, res) => {
    res.send('Hello, boilerplate!');

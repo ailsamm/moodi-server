@@ -5,5 +5,6 @@ CREATE TABLE moodi_users(
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
     email TEXT NOT NULL,
-    password TEXT NOT NULL
+    password TEXT NOT NULL,
+    ranking TEXT NOT NULL
 ); 
