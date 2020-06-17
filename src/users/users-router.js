@@ -6,7 +6,7 @@ const usersRouter = express.Router();
 const jsonParser = express.json();
 
 // protects user info against XSS attacks
-const serializeUserInfo = user => ({
+const serializeUser = user => ({
   id: user.id,
   first_name: xss(user.first_name),
   last_name: xss(user.last_name),
@@ -22,7 +22,7 @@ usersRouter
     
     usersService.getAllUsers(knexInstance)
       .then(users => {
-        res.json(users.map(serializeUserInfo));
+        res.json(users.map(serializeUser));
       })
       .catch(next);
   })
@@ -53,7 +53,7 @@ usersRouter
         res
           .status(201)
           .location(path.posix.join(req.originalUrl, `/${user.id}`))
-          .json(serializeUserInfo(user))
+          .json(serializeUser(user))
       })
       .catch(next);
   })
@@ -78,7 +78,7 @@ usersRouter
       .catch(next);
   })
   .get((req, res, next) => {
-    res.json(serializeUserInfo(res.user));
+    res.json(serializeUser(res.user));
   })
   .delete((req, res, next) => {
     usersService.deleteUser(

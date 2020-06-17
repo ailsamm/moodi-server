@@ -5,7 +5,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const logger = require('./logger');
 const usersRouter = require('./users/users-router');
-//const moodLogsRouter = require('./mood-logs/mood-logs-router');
+const moodLogsRouter = require('./mood-logs/mood-logs-router');
 const { NODE_ENV } = require('./config');
 
 const app = express();
@@ -30,7 +30,7 @@ app.use(function errorHandler(error, req, res, next) {
 })
 
 app.use('/api/users', usersRouter);
-//app.use('/api/mood-logs', moodLogsRouter);
+app.use('/api/mood-logs', moodLogsRouter);
 
 app.get('/', (req, res) => {
    res.send('Hello, boilerplate!');
