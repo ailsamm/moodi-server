@@ -10,9 +10,9 @@ function getTestUsers() {
 
 function getTestMoodLogs(){
     return [
-        {id: 1, user_id: 1, mood: 'happy', start_date: moment("06-01-2020", 'MM-DD-YYYY'), end_date: moment("06-01-2020", 'MM-DD-YYYY'), title: "\xA0", activities: ['sun', 'bath'], sleepHours: 8, notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum elit.'},
-        {id: 2, user_id: 1, mood: 'sad', start_date: moment("06-05-2020", 'MM-DD-YYYY'), end_date: moment("06-05-2020", 'MM-DD-YYYY'), title: "\xA0", activities: ['outdoors', 'family'], sleepHours: 6, notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum elit.'},
-        {id: 3, user_id: 1, mood: 'calm', start_date: moment("06-10-2020", 'MM-DD-YYYY'), end_date: moment("06-10-2020", 'MM-DD-YYYY'), title: "\xA0", activities: ['family', 'friends'], sleepHours: 4, notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum elit.'},
+        {id: 1, user_id: 1, mood: 'happy', start_date: "06-01-2020", end_date: "06-01-2020", title: "\xA0", activities: 'sun,bath', sleep_hours: 8, notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum elit.'},
+        {id: 2, user_id: 1, mood: 'sad', start_date: "06-05-2020", end_date: "06-05-2020", title: "\xA0", activities: 'outdoors,family', sleep_hours: 6, notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum elit.'},
+        {id: 3, user_id: 1, mood: 'calm', start_date: "06-10-2020", end_date: "06-10-2020", title: "\xA0", activities: 'family,friends', sleep_hours: 4, notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum elit.'},
     ]
 };
 

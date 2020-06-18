@@ -35,7 +35,7 @@ moodLogsRouter
 
     // check that all required fields are present
     for (const [key, value] of Object.entries({ user_id, mood, activities, notes, title, start_date, end_date, sleep_hours })) {
-      if (value === null) {
+      if (value == null) {
         return res.status(400).json({
           error: { message: `Missing '${key}' in request body` }
         });
