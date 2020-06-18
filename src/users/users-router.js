@@ -38,7 +38,7 @@ usersRouter
 
     // check that all required fields are present
     for (const [key, value] of Object.entries({ first_name, last_name, email, password })) {
-      if (value === null) {
+      if (value == null) {
         return res.status(400).json({
           error: { message: `Missing '${key}' in request body` }
         });
@@ -99,7 +99,7 @@ usersRouter
     if (numberOfValues === 0)
       return res.status(400).json({
         error: {
-          message: `Request body must contain at least either 'first_name', 'last_name', 'email', 'password' or 'ranking`
+          message: `Request body must contain at least either 'first_name', 'last_name', 'email', 'password' or 'ranking'`
         }
       });
 
